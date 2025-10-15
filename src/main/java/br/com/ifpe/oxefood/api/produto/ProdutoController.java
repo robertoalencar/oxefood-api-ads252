@@ -35,6 +35,7 @@ public class ProdutoController {
     @PostMapping
     public ResponseEntity<Produto> save(@RequestBody @Valid ProdutoRequest request) {
 
+            
         Produto produtoNovo = request.build();
         CategoriaProduto cp =  categoriaProdutoService.obterPorID(request.getIdCategoria());
         produtoNovo.setCategoria(cp);
